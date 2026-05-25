@@ -12,12 +12,12 @@ export default function Dashboard() {
     ];
   });
 
-  // Jalon 4 : persistance automatique 
+  // Jalon 4 : persistance automatique (à déplacer après dans un useEffect)
   useEffect(() => {
     localStorage.setItem('taskflow_data', JSON.stringify(tasks));
   }, [tasks]);
 
-  //  fonction pour ajouter une tâche
+  // Lifting state up : fonction pour ajouter une tâche
   const handleAddTask = (newTask) => {
     setTasks([...tasks, newTask]); // spread operator – immutabilité
   };

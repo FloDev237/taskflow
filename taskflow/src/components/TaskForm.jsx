@@ -7,14 +7,14 @@ export default function TaskForm({ onAddTask }) {
   const [statut, setStatut] = useState('A faire');
 
   const handleSubmit = (e) => {
-    e.preventDefault();                     
+    e.preventDefault();                     // pas de rechargement
     const newTask = {
-      id: Date.now(),                       
+      id: Date.now(),                       // identifiant unique
       titre,
       description,
       statut
     };
-    onAddTask(newTask);                     
+    onAddTask(newTask);                     // remontée vers Dashboard
     // Réinitialisation du formulaire
     setTitre('');
     setDescription('');
